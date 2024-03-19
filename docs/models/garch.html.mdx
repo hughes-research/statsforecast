@@ -2,8 +2,8 @@
 description: Step-by-step guide on using the `GARCH Model` with `Statsforecast`.
 output-file: garch.html
 title: GARCH Model
-
 ---
+
 
 ## Table of Contents
 
@@ -179,12 +179,10 @@ especially in finance and economics.
 
 ## Loading libraries and data <a class="anchor" id="loading"></a>
 
-<Tip>
-
-Statsforecast will be needed. To install, see
-[instructions](../getting-started/installation.html).
-
-</Tip>
+> **Tip**
+>
+> Statsforecast will be needed. To install, see
+> [instructions](../getting-started/installation.html).
 
 Next, we import plotting libraries and configure the plotting style.
 
@@ -305,7 +303,7 @@ from statsforecast import StatsForecast
 StatsForecast.plot(df)
 ```
 
-![](/docs/models/GARCH_files/figure-markdown_strict/cell-8-output-1.png)
+![](/statsforecast/docs/models/GARCH_files/figure-markdown_strict/cell-8-output-1.png)
 
 ### The Augmented Dickey-Fuller Test
 
@@ -429,7 +427,7 @@ fig = px.line(df, x=df["ds"], y="return",title="SP500 Return Chart",template = "
 fig.show()
 ```
 
-![](/docs/models/GARCH_files/figure-markdown_strict/cell-12-output-2.png)
+![](/statsforecast/docs/models/GARCH_files/figure-markdown_strict/cell-12-output-2.png)
 
 ### Creating Squared Returns
 
@@ -471,7 +469,7 @@ fig.update_layout(height=600, width=800, title_text="Returns vs Squared Returns"
 fig.show()
 ```
 
-![](/docs/models/GARCH_files/figure-markdown_strict/cell-14-output-1.png)
+![](/statsforecast/docs/models/GARCH_files/figure-markdown_strict/cell-14-output-1.png)
 
 ```python
 from scipy.stats import probplot, moment
@@ -506,7 +504,7 @@ def plot_correlogram(x, lags=None, title=None):
 plot_correlogram(df["return"], lags=30, title="Time Series Analysis plot \n")
 ```
 
-![](/docs/models/GARCH_files/figure-markdown_strict/cell-16-output-1.png)
+![](/statsforecast/docs/models/GARCH_files/figure-markdown_strict/cell-16-output-1.png)
 
 ### Ljung-Box Test
 
@@ -527,7 +525,7 @@ The Ljung-Box with the Box-Pierce option will return, for each lag, the
 Ljung-Box test statistic, Ljung-Box p-values, Box-Pierce test statistic,
 and Box-Pierce p-values.
 
-If $p<\alpha (0.05)$ we reject the null hypothesis.
+If $p<\alpha  (0.05)$ we reject the null hypothesis.
 
 ```python
 from statsmodels.stats.diagnostic import acorr_ljungbox
@@ -582,7 +580,7 @@ sns.lineplot(test, x="ds", y="y", label="Test")
 plt.show()
 ```
 
-![](/docs/models/GARCH_files/figure-markdown_strict/cell-21-output-1.png)
+![](/statsforecast/docs/models/GARCH_files/figure-markdown_strict/cell-21-output-1.png)
 
 ## Implementation of GARCH with StatsForecast <a class="anchor" id="implementation"></a>
 
@@ -673,7 +671,7 @@ contiguous as is required by our models.
 
 The following graph depicts such a Cross Validation Strategy:
 
-![](https://raw.githubusercontent.com/Nixtla/statsforecast/main/nbs/imgs/chainedwindows.gif)
+![](https://raw.githubusercontent.com/Nixtla/statsforecast/main/nbs/imgs/ChainedWindows.gif)
 
 ### Perform time series cross-validation
 
@@ -863,7 +861,7 @@ axs[1,1].set_title("Autocorrelation");
 plt.show();
 ```
 
-![](/docs/models/GARCH_files/figure-markdown_strict/cell-34-output-1.png)
+![](/statsforecast/docs/models/GARCH_files/figure-markdown_strict/cell-34-output-1.png)
 
 ### Forecast Method
 
@@ -999,7 +997,7 @@ ax.grid(True)
 plt.show()
 ```
 
-![](/docs/models/GARCH_files/figure-markdown_strict/cell-41-output-1.png)
+![](/statsforecast/docs/models/GARCH_files/figure-markdown_strict/cell-41-output-1.png)
 
 ### Predict method with confidence interval
 
@@ -1108,7 +1106,7 @@ def plot_forecasts(y_hist, y_true, y_pred, models):
 plot_forecasts(train, test, forecast_df, models=["GARCH(1,1)" ])
 ```
 
-![](/docs/models/GARCH_files/figure-markdown_strict/cell-46-output-1.png)
+![](/statsforecast/docs/models/GARCH_files/figure-markdown_strict/cell-46-output-1.png)
 
 ## Model Evaluation <a class="anchor" id="evaluate"></a>
 

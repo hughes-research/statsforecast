@@ -1,19 +1,15 @@
 ---
-description: In this example, we'll implement prediction intervals
+description: 'In this example, we''ll implement prediction intervals'
 output-file: uncertaintyintervals.html
 title: Probabilistic Forecasting
-
 ---
 
-<Warning>
 
-### Prerequisites
-
-This tutorial assumes basic familiarity with StatsForecast. For a
-minimal example visit the [Quick
-Start](../getting-started/getting_started_short.html)
-
-</Warning>
+> **Prerequisites**
+>
+> This tutorial assumes basic familiarity with StatsForecast. For a
+> minimal example visit the [Quick
+> Start](../getting-started/getting_started_short.html)
 
 ## Introduction
 
@@ -41,25 +37,17 @@ will be able to use them to generate point forecasts and prediction
 intervals. Furthermore, you’ll also learn how to generate plots with the
 historical data, the point forecasts, and the prediction intervals.
 
-<Important>
+> **Important**
+>
+> Although the terms are often confused, prediction intervals are not
+> the same as [confidence
+> intervals](https://robjhyndman.com/hyndsight/intervals/).
 
-### Important
-
-Although the terms are often confused, prediction intervals are not the
-same as [confidence
-intervals](https://robjhyndman.com/hyndsight/intervals/).
-
-</Important>
-
-<Warning>
-
-### Warning
-
-In practice, most prediction intervals are too narrow since models do
-not account for all sources of uncertainty. A discussion about this can
-be found [here](https://robjhyndman.com/hyndsight/narrow-pi/).
-
-</Warning>
+> **Warning**
+>
+> In practice, most prediction intervals are too narrow since models do
+> not account for all sources of uncertainty. A discussion about this
+> can be found [here](https://robjhyndman.com/hyndsight/narrow-pi/).
 
 **Outline:**
 
@@ -68,12 +56,10 @@ be found [here](https://robjhyndman.com/hyndsight/narrow-pi/).
 3.  Train models
 4.  Plot prediction intervals
 
-<Tip>
-
-You can use Colab to run this Notebook interactively
-<a href="https://colab.research.google.com/github/Nixtla/statsforecast/blob/main/nbs/docs/tutorials/UncertaintyIntervals.ipynb" target="_parent"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/></a>
-
-</Tip>
+> **Tip**
+>
+> You can use Colab to run this Notebook interactively
+> <a href="https://colab.research.google.com/github/Nixtla/statsforecast/blob/main/nbs/docs/tutorials/UncertaintyIntervals.ipynb" target="_parent"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/></a>
 
 ## Install libraries
 
@@ -166,7 +152,7 @@ StatsForecast.plot(train, test, plot_random = False)
   from tqdm.autonotebook import tqdm
 ```
 
-![](/docs/tutorials/UncertaintyIntervals_files/figure-markdown_strict/cell-7-output-3.png)
+![](/statsforecast/docs/tutorials/UncertaintyIntervals_files/figure-markdown_strict/cell-7-output-3.png)
 
 ## Train models
 
@@ -277,7 +263,7 @@ specify the model and the levels that we want to plot.
 sf.plot(train, test, plot_random = False, models=['AutoETS'], level=levels)
 ```
 
-![](/docs/tutorials/UncertaintyIntervals_files/figure-markdown_strict/cell-12-output-1.png)
+![](/statsforecast/docs/tutorials/UncertaintyIntervals_files/figure-markdown_strict/cell-12-output-1.png)
 
 ### Historic Average
 
@@ -285,7 +271,7 @@ sf.plot(train, test, plot_random = False, models=['AutoETS'], level=levels)
 sf.plot(train, test, plot_random = False, models=['HistoricAverage'], level=levels)
 ```
 
-![](/docs/tutorials/UncertaintyIntervals_files/figure-markdown_strict/cell-13-output-1.png)
+![](/statsforecast/docs/tutorials/UncertaintyIntervals_files/figure-markdown_strict/cell-13-output-1.png)
 
 ### Naive
 
@@ -293,7 +279,7 @@ sf.plot(train, test, plot_random = False, models=['HistoricAverage'], level=leve
 sf.plot(train, test, plot_random = False, models=['Naive'], level=levels)
 ```
 
-![](/docs/tutorials/UncertaintyIntervals_files/figure-markdown_strict/cell-14-output-1.png)
+![](/statsforecast/docs/tutorials/UncertaintyIntervals_files/figure-markdown_strict/cell-14-output-1.png)
 
 ### Random Walk with Drift
 
@@ -301,7 +287,7 @@ sf.plot(train, test, plot_random = False, models=['Naive'], level=levels)
 sf.plot(train, test, plot_random = False, models=['RWD'], level=levels)
 ```
 
-![](/docs/tutorials/UncertaintyIntervals_files/figure-markdown_strict/cell-15-output-1.png)
+![](/statsforecast/docs/tutorials/UncertaintyIntervals_files/figure-markdown_strict/cell-15-output-1.png)
 
 ### Seasonal Naive
 
@@ -309,7 +295,7 @@ sf.plot(train, test, plot_random = False, models=['RWD'], level=levels)
 sf.plot(train, test, plot_random = False, models=['SeasonalNaive'], level=levels)
 ```
 
-![](/docs/tutorials/UncertaintyIntervals_files/figure-markdown_strict/cell-16-output-1.png)
+![](/statsforecast/docs/tutorials/UncertaintyIntervals_files/figure-markdown_strict/cell-16-output-1.png)
 
 From these plots, we can conclude that the uncertainty around each
 forecast varies according to the model that is being used. For the same

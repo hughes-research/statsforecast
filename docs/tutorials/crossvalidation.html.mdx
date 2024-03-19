@@ -1,20 +1,17 @@
 ---
-description: In this example, we'll implement time series cross-validation to evaluate
+description: >-
+  In this example, we'll implement time series cross-validation to evaluate
   model's performance.
 output-file: crossvalidation.html
 title: Cross validation
-
 ---
 
-<Warning>
 
-### Prerequesites
-
-This tutorial assumes basic familiarity with StatsForecast. For a
-minimal example visit the [Quick
-Start](https://nixtla.github.io/statsforecast/examples/getting_started_short.html)
-
-</Warning>
+> **Prerequesites**
+>
+> This tutorial assumes basic familiarity with StatsForecast. For a
+> minimal example visit the [Quick
+> Start](https://nixtla.github.io/statsforecast/examples/getting_started_short.html)
 
 ## Introduction
 
@@ -22,7 +19,7 @@ Time series cross-validation is a method for evaluating how a model
 would have performed in the past. It works by defining a sliding window
 across the historical data and predicting the period following it.
 
-![](https://raw.githubusercontent.com/Nixtla/statsforecast/main/nbs/imgs/chainedwindows.gif)
+![](https://raw.githubusercontent.com/Nixtla/statsforecast/main/nbs/imgs/ChainedWindows.gif)
 
 [Statsforecast](https://nixtla.github.io/statsforecast/) has an
 implementation of time series cross-validation that is fast and easy to
@@ -40,12 +37,10 @@ hourly dataset.
 4.  Perform time series cross-validation
 5.  Evaluate results
 
-<Tip>
-
-You can use Colab to run this Notebook interactively
-<a href="https://colab.research.google.com/github/Nixtla/statsforecast/blob/main/nbs/docs/tutorials/CrossValidation.ipynb" target="_parent"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/></a>
-
-</Tip>
+> **Tip**
+>
+> You can use Colab to run this Notebook interactively
+> <a href="https://colab.research.google.com/github/Nixtla/statsforecast/blob/main/nbs/docs/tutorials/CrossValidation.ipynb" target="_parent"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/></a>
 
 ## Install libraries
 
@@ -116,7 +111,7 @@ method.
 StatsForecast.plot(df)
 ```
 
-![](/docs/tutorials/CrossValidation_files/figure-markdown_strict/cell-6-output-2.png)
+![](/statsforecast/docs/tutorials/CrossValidation_files/figure-markdown_strict/cell-6-output-2.png)
 
 ## Train model
 
@@ -221,11 +216,11 @@ for k in range(len(cutoff)):
     StatsForecast.plot(df, cv.loc[:, cv.columns != 'cutoff'])
 ```
 
-![](/docs/tutorials/CrossValidation_files/figure-markdown_strict/cell-10-output-1.png)
+![](/statsforecast/docs/tutorials/CrossValidation_files/figure-markdown_strict/cell-10-output-1.png)
 
-![](/docs/tutorials/CrossValidation_files/figure-markdown_strict/cell-10-output-2.png)
+![](/statsforecast/docs/tutorials/CrossValidation_files/figure-markdown_strict/cell-10-output-2.png)
 
-![](/docs/tutorials/CrossValidation_files/figure-markdown_strict/cell-10-output-3.png)
+![](/statsforecast/docs/tutorials/CrossValidation_files/figure-markdown_strict/cell-10-output-3.png)
 
 Notice that in each cutoff period, we generated a forecast for the next
 24 hours using only the data `y` before said period.
@@ -267,14 +262,12 @@ RMSE using cross-validation:  33.90342
 This measure should better reflect the predictive abilities of our
 model, since it used different time periods to test its accuracy.
 
-<Tip>
-
-Cross validation is especially useful when comparing multiple models.
-Here’s an
-[example](https://nixtla.github.io/statsforecast/examples/getting_started_complete.html)
-with multiple models and time series.
-
-</Tip>
+> **Tip**
+>
+> Cross validation is especially useful when comparing multiple models.
+> Here’s an
+> [example](https://nixtla.github.io/statsforecast/examples/getting_started_complete.html)
+> with multiple models and time series.
 
 ## References
 

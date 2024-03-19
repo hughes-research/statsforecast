@@ -2,8 +2,8 @@
 description: Step-by-step guide on using the `AutoRegressive Model` with `Statsforecast`.
 output-file: autoregressive.html
 title: AutoRegressive Model
-
 ---
+
 
 ## Table of Contents
 
@@ -270,7 +270,7 @@ easy to show that both $\{X_{1t } \}$ and $\{X_{2t } \}$ are stationary
 and satisfy Eq. (3). That is, both are the stationary solution of Eq.
 (3). This gives rise to a question: which one of both is preferable?
 Obviously, $\{X_{2t } \}$ depends on future values of unobservable
-$\{\varepsilon_t \}$, and so it is unnatural. Hence we take
+$\{\varepsilon_t  \}$, and so it is unnatural. Hence we take
 $\{X_{1t } \}$ and abandon $\{X_{2t } \}$. In other words, we require
 that the coefficient $\varphi$ in Eq. (3) is less 1 in absolute value.
 At this point, the $\text{AR}(1)$ model is said to be causal and its
@@ -392,12 +392,10 @@ This is where the Augmented Dickey Fuller (ADF) test comes in handy.
 
 ## Loading libraries and data <a class="anchor" id="loading"></a>
 
-<Tip>
-
-Statsforecast will be needed. To install, see
-[instructions](../getting-started/installation.html).
-
-</Tip>
+> **Tip**
+>
+> Statsforecast will be needed. To install, see
+> [instructions](../getting-started/installation.html).
 
 Next, we import plotting libraries and configure the plotting style.
 
@@ -512,7 +510,7 @@ from statsforecast import StatsForecast
 StatsForecast.plot(df)
 ```
 
-![](/docs/models/AutoRegressive_files/figure-markdown_strict/cell-8-output-1.png)
+![](/statsforecast/docs/models/AutoRegressive_files/figure-markdown_strict/cell-8-output-1.png)
 
 ### The Augmented Dickey-Fuller Test
 
@@ -640,7 +638,7 @@ def tsplot(y, lags=None, figsize=(12, 7), style='bmh'): # [3]
 tsplot(df["y"].diff().dropna(), lags=20);
 ```
 
-![](/docs/models/AutoRegressive_files/figure-markdown_strict/cell-14-output-1.png)
+![](/statsforecast/docs/models/AutoRegressive_files/figure-markdown_strict/cell-14-output-1.png)
 
 As you can see, based on the blue background shaded area of the graph,
 the PACF shows the first, second, third, fourth, sixth, seventh, ninth,
@@ -710,7 +708,7 @@ sns.lineplot(test, x="ds", y="y", label="Test")
 plt.show()
 ```
 
-![](/docs/models/AutoRegressive_files/figure-markdown_strict/cell-17-output-1.png)
+![](/statsforecast/docs/models/AutoRegressive_files/figure-markdown_strict/cell-17-output-1.png)
 
 # Implementation of AutoRegressive with StatsForecast <a class="anchor" id="implementation"></a>
 
@@ -874,7 +872,7 @@ axs[1,1].set_title("Autocorrelation");
 plt.show();
 ```
 
-![](/docs/models/AutoRegressive_files/figure-markdown_strict/cell-25-output-1.png)
+![](/statsforecast/docs/models/AutoRegressive_files/figure-markdown_strict/cell-25-output-1.png)
 
 ### Forecast Method
 
@@ -1002,7 +1000,7 @@ ax.grid(True)
 plt.show()
 ```
 
-![](/docs/models/AutoRegressive_files/figure-markdown_strict/cell-31-output-1.png)
+![](/statsforecast/docs/models/AutoRegressive_files/figure-markdown_strict/cell-31-output-1.png)
 
 ### Predict method with confidence interval
 
@@ -1108,7 +1106,7 @@ def plot_forecasts(y_hist, y_true, y_pred, models):
 plot_forecasts(train, test, forecast_df, models=["AutoRegressive"])
 ```
 
-![](/docs/models/AutoRegressive_files/figure-markdown_strict/cell-36-output-1.png)
+![](/statsforecast/docs/models/AutoRegressive_files/figure-markdown_strict/cell-36-output-1.png)
 
 Let’s plot the same graph using the plot function that comes in
 `Statsforecast`, as shown below.
@@ -1129,7 +1127,7 @@ contiguous as is required by our models.
 
 The following graph depicts such a Cross Validation Strategy:
 
-![](https://raw.githubusercontent.com/Nixtla/statsforecast/main/nbs/imgs/chainedwindows.gif)
+![](https://raw.githubusercontent.com/Nixtla/statsforecast/main/nbs/imgs/ChainedWindows.gif)
 
 ### Perform time series cross-validation
 

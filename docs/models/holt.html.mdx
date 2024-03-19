@@ -2,8 +2,8 @@
 description: Step-by-step guide on using the `Holt Model` with `Statsforecast`.
 output-file: holt.html
 title: Holt Model
-
 ---
+
 
 ## Table of Contents
 
@@ -219,63 +219,63 @@ equations.
 
 Table 1: Additive error ETS models \| \| Nonseasonal \|Additive
 \|Multiplicative\| \|—-\|———–\|———–\|————–\| \|No
-trend\|$\begin{aligned} &y_{t} = l_{t-1} + \epsilon_t \\ &l_t = l_{t-1} + \alpha \epsilon_t \end{aligned}$
-\|$\begin{aligned} &y_{t} = l_{t-1} + s_{t-m} + \epsilon_t \\ &l_t = l_{t-1} + \alpha \epsilon_t \\ &s_t = s_{t-m} + \gamma \epsilon_t \end{aligned}$
-\|$\begin{aligned} &y_{t} = l_{t-1} s_{t-m} + \epsilon_t \\ &l_t = l_{t-1} + \alpha \frac{\epsilon_t}{s_{t-m}} \\ &s_t = s_{t-m} + \gamma \frac{\epsilon_t}{l_{t-1}} \end{aligned}$\|
+trend\|$\begin{aligned} &y_{t} = l_{t-1} + \epsilon_t \\  &l_t = l_{t-1} + \alpha \epsilon_t  \end{aligned}$
+\|$\begin{aligned} &y_{t} = l_{t-1} + s_{t-m} + \epsilon_t \\  &l_t = l_{t-1} + \alpha \epsilon_t \\  &s_t = s_{t-m} + \gamma \epsilon_t  \end{aligned}$
+\|$\begin{aligned} &y_{t} = l_{t-1} s_{t-m} + \epsilon_t \\  &l_t = l_{t-1} + \alpha \frac{\epsilon_t}{s_{t-m}} \\  &s_t = s_{t-m} + \gamma \frac{\epsilon_t}{l_{t-1}}  \end{aligned}$\|
 \|Additive\|
-$\begin{aligned} &y_{t} = l_{t-1} + b_{t-1} + \epsilon_t \\ &l_t = l_{t-1} + b_{t-1} + \alpha \epsilon_t \\ &b_t = b_{t-1} + \beta \epsilon_t \end{aligned}$
+$\begin{aligned} &y_{t} = l_{t-1} + b_{t-1} + \epsilon_t \\  &l_t = l_{t-1} + b_{t-1} + \alpha \epsilon_t \\  &b_t = b_{t-1} + \beta \epsilon_t  \end{aligned}$
 \|
-$\begin{aligned} &y_{t} = l_{t-1} + b_{t-1} + s_{t-m} + \epsilon_t \\ &l_t = l_{t-1} + b_{t-1} + \alpha \epsilon_t \\ &b_t = b_{t-1} + \beta \epsilon_t \\ &s_t = s_{t-m} + \gamma \epsilon_t \end{aligned}$
+$\begin{aligned}  &y_{t} = l_{t-1} + b_{t-1} + s_{t-m} + \epsilon_t \\  &l_t = l_{t-1} + b_{t-1} + \alpha \epsilon_t \\  &b_t = b_{t-1} + \beta \epsilon_t \\  &s_t = s_{t-m} + \gamma \epsilon_t  \end{aligned}$
 \|
-$\begin{aligned} &y_{t} = (l_{t-1} + b_{t-1}) s_{t-m} + \epsilon_t \\ &l_t = l_{t-1} + b_{t-1} + \alpha \frac{\epsilon_t}{s_{t-m}} \\ &b_t = b_{t-1} + \beta \frac{\epsilon_t}{s_{t-m}} \\ &s_t = s_{t-m} + \gamma \frac{\epsilon_t}{l_{t-1} + b_{t-1}} \end{aligned}$\|
+$\begin{aligned} &y_{t} = (l_{t-1} + b_{t-1}) s_{t-m} + \epsilon_t \\  &l_t = l_{t-1} + b_{t-1} + \alpha \frac{\epsilon_t}{s_{t-m}} \\  &b_t = b_{t-1} + \beta \frac{\epsilon_t}{s_{t-m}} \\  &s_t = s_{t-m} + \gamma \frac{\epsilon_t}{l_{t-1} + b_{t-1}}  \end{aligned}$\|
 \|Additive damped\|
-$\begin{aligned} &y_{t} = l_{t-1} + \phi b_{t-1} + \epsilon_t \\ &l_t = l_{t-1} + \phi b_{t-1} + \alpha \epsilon_t \\ &b_t = \phi b_{t-1} + \beta \epsilon_t \end{aligned}$
+$\begin{aligned} &y_{t} = l_{t-1} + \phi b_{t-1} + \epsilon_t \\  &l_t = l_{t-1} + \phi b_{t-1} + \alpha \epsilon_t \\  &b_t = \phi b_{t-1} + \beta \epsilon_t  \end{aligned}$
 \|
-$\begin{aligned} &y_{t} = l_{t-1} + \phi b_{t-1} + s_{t-m} + \epsilon_t \\ &l_t = l_{t-1} + \phi b_{t-1} + \alpha \epsilon_t \\ &b_t = \phi b_{t-1} + \beta \epsilon_t \\ &s_t = s_{t-m} + \gamma \epsilon_t \end{aligned}$
+$\begin{aligned} &y_{t} = l_{t-1} + \phi b_{t-1} + s_{t-m} + \epsilon_t \\  &l_t = l_{t-1} + \phi b_{t-1} + \alpha \epsilon_t \\  &b_t = \phi b_{t-1} + \beta \epsilon_t \\  &s_t = s_{t-m} + \gamma \epsilon_t  \end{aligned}$
 \|
-$\begin{aligned} &y_{t} = (l_{t-1} + \phi b_{t-1}) s_{t-m} + \epsilon_t \\ &l_t = l_{t-1} + \phi b_{t-1} + \alpha \frac{\epsilon_t}{s_{t-m}} \\ &b_t = \phi b_{t-1} + \beta \frac{\epsilon_t}{s_{t-m}} \\ &s_t = s_{t-m} + \gamma \frac{\epsilon_t}{l_{t-1} + \phi b_{t-1}} \end{aligned}$\|
+$\begin{aligned} &y_{t} = (l_{t-1} + \phi b_{t-1}) s_{t-m} + \epsilon_t \\  &l_t = l_{t-1} + \phi b_{t-1} + \alpha \frac{\epsilon_t}{s_{t-m}} \\  &b_t = \phi b_{t-1} + \beta \frac{\epsilon_t}{s_{t-m}} \\  &s_t = s_{t-m} + \gamma \frac{\epsilon_t}{l_{t-1} + \phi b_{t-1}}  \end{aligned}$\|
 \|Multiplicative\|
-$\begin{aligned} &y_{t} = l_{t-1} b_{t-1} + \epsilon_t \\ &l_t = l_{t-1} b_{t-1} + \alpha \epsilon_t \\ &b_t = b_{t-1} + \beta \frac{\epsilon_t}{l_{t-1}} \end{aligned}$
+$\begin{aligned} &y_{t} = l_{t-1} b_{t-1} + \epsilon_t \\  &l_t = l_{t-1} b_{t-1} + \alpha \epsilon_t \\  &b_t = b_{t-1} + \beta \frac{\epsilon_t}{l_{t-1}}  \end{aligned}$
 \|
-$\begin{aligned} &y_{t} = l_{t-1} b_{t-1} + s_{t-m} + \epsilon_t \\ &l_t = l_{t-1} b_{t-1} + \alpha \epsilon_t \\ &b_t = b_{t-1} + \beta \frac{\epsilon_t}{l_{t-1}} \\ &s_t = s_{t-m} + \gamma \epsilon_t \end{aligned}$
+$\begin{aligned} &y_{t} = l_{t-1} b_{t-1} + s_{t-m} + \epsilon_t \\  &l_t = l_{t-1} b_{t-1} + \alpha \epsilon_t \\  &b_t = b_{t-1} + \beta \frac{\epsilon_t}{l_{t-1}} \\  &s_t = s_{t-m} + \gamma \epsilon_t  \end{aligned}$
 \|
-$\begin{aligned} &y_{t} = l_{t-1} b_{t-1} s_{t-m} + \epsilon_t \\ &l_t = l_{t-1} b_{t-1} + \alpha \frac{\epsilon_t}{s_{t-m}} \\ &b_t = b_{t-1} + \beta \frac{\epsilon_t}{l_{t-1}s_{t-m}} \\ &s_t = s_{t-m} + \gamma \frac{\epsilon_t}{l_{t-1} b_{t-1}} \end{aligned}$\|
+$\begin{aligned} &y_{t} = l_{t-1} b_{t-1} s_{t-m} + \epsilon_t \\  &l_t = l_{t-1} b_{t-1} + \alpha \frac{\epsilon_t}{s_{t-m}} \\  &b_t = b_{t-1} + \beta \frac{\epsilon_t}{l_{t-1}s_{t-m}} \\  &s_t = s_{t-m} + \gamma \frac{\epsilon_t}{l_{t-1} b_{t-1}}  \end{aligned}$\|
 \|Multiplicative damped\|
-$\begin{aligned} &y_{t} = l_{t-1} b_{t-1}^\phi + \epsilon_t \\ &l_t = l_{t-1} b_{t-1}^\phi + \alpha \epsilon_t \\ &b_t = b_{t-1}^\phi + \beta \frac{\epsilon_t}{l_{t-1}} \end{aligned}$
+$\begin{aligned} &y_{t} = l_{t-1} b_{t-1}^\phi + \epsilon_t \\  &l_t = l_{t-1} b_{t-1}^\phi + \alpha \epsilon_t \\  &b_t = b_{t-1}^\phi + \beta \frac{\epsilon_t}{l_{t-1}}  \end{aligned}$
 \|
-$\begin{aligned} &y_{t} = l_{t-1} b_{t-1}^\phi + s_{t-m} + \epsilon_t \\ &l_t = l_{t-1} b_{t-1}^\phi + \alpha \epsilon_t \\ &b_t = b_{t-1}^\phi + \beta \frac{\epsilon_t}{l_{t-1}} \\ &s_t = s_{t-m} + \gamma \epsilon_t \end{aligned}$
+$\begin{aligned} &y_{t} = l_{t-1} b_{t-1}^\phi + s_{t-m} + \epsilon_t \\  &l_t = l_{t-1} b_{t-1}^\phi + \alpha \epsilon_t \\  &b_t = b_{t-1}^\phi + \beta \frac{\epsilon_t}{l_{t-1}} \\  &s_t = s_{t-m} + \gamma \epsilon_t  \end{aligned}$
 \|
-$\begin{aligned} &y_{t} = l_{t-1} b_{t-1}^\phi s_{t-m} + \epsilon_t \\ &l_t = l_{t-1} b_{t-1}^\phi + \alpha \frac{\epsilon_t}{s_{t-m}} \\ &b_t = b_{t-1}^\phi + \beta \frac{\epsilon_t}{l_{t-1}s_{t-m}} \\ &s_t = s_{t-m} + \gamma \frac{\epsilon_t}{l_{t-1} b_{t-1}} \end{aligned}$\|
+$\begin{aligned} &y_{t} = l_{t-1} b_{t-1}^\phi s_{t-m} + \epsilon_t \\  &l_t = l_{t-1} b_{t-1}^\phi + \alpha \frac{\epsilon_t}{s_{t-m}} \\  &b_t = b_{t-1}^\phi + \beta \frac{\epsilon_t}{l_{t-1}s_{t-m}} \\  &s_t = s_{t-m} + \gamma \frac{\epsilon_t}{l_{t-1} b_{t-1}}  \end{aligned}$\|
 
 Table 2: Multiplicative error ETS models \| \|Nonseasonal \|Additive
 \|Multiplicative\| \|——\|————-\|———-\|————–\| \|No trend\|
-$\begin{aligned} &y_{t} = l_{t-1}(1 + \epsilon_t) \\ &l_t = l_{t-1}(1 + \alpha \epsilon_t) \end{aligned}$
+$\begin{aligned} &y_{t} = l_{t-1}(1 + \epsilon_t) \\  &l_t = l_{t-1}(1 + \alpha \epsilon_t)  \end{aligned}$
 \|
-$\begin{aligned} &y_{t} = (l_{t-1} + s_{t-m})(1 + \epsilon_t) \\ &l_t = l_{t-1} + \alpha \mu_{y,t} \epsilon_t \\ &s_t = s_{t-m} + \gamma \mu_{y,t} \epsilon_t \end{aligned}$
+$\begin{aligned} &y_{t} = (l_{t-1} + s_{t-m})(1 + \epsilon_t) \\  &l_t = l_{t-1} + \alpha \mu_{y,t} \epsilon_t \\  &s_t = s_{t-m} + \gamma \mu_{y,t} \epsilon_t  \end{aligned}$
 \|
-$\begin{aligned} &y_{t} = l_{t-1} s_{t-m}(1 + \epsilon_t) \\ &l_t = l_{t-1}(1 + \alpha \epsilon_t) \\ &s_t = s_{t-m}(1 + \gamma \epsilon_t) \end{aligned}$\|
+$\begin{aligned} &y_{t} = l_{t-1} s_{t-m}(1 + \epsilon_t) \\  &l_t = l_{t-1}(1 + \alpha \epsilon_t) \\  &s_t = s_{t-m}(1 + \gamma \epsilon_t)  \end{aligned}$\|
 \|Additive\|
-$\begin{aligned} &y_{t} = (l_{t-1} + b_{t-1})(1 + \epsilon_t) \\ &l_t = (l_{t-1} + b_{t-1})(1 + \alpha \epsilon_t) \\ &b_t = b_{t-1} + \beta \mu_{y,t} \epsilon_t \end{aligned}$
+$\begin{aligned} &y_{t} = (l_{t-1} + b_{t-1})(1 + \epsilon_t) \\  &l_t = (l_{t-1} + b_{t-1})(1 + \alpha \epsilon_t) \\  &b_t = b_{t-1} + \beta \mu_{y,t} \epsilon_t  \end{aligned}$
 \|
-$\begin{aligned} &y_{t} = (l_{t-1} + b_{t-1} + s_{t-m})(1 + \epsilon_t) \\ &l_t = l_{t-1} + b_{t-1} + \alpha \mu_{y,t} \epsilon_t \\ &b_t = b_{t-1} + \beta \mu_{y,t} \epsilon_t \\ &s_t = s_{t-m} + \gamma \mu_{y,t} \epsilon_t \end{aligned}$
+$\begin{aligned} &y_{t} = (l_{t-1} + b_{t-1} + s_{t-m})(1 + \epsilon_t) \\  &l_t = l_{t-1} + b_{t-1} + \alpha \mu_{y,t} \epsilon_t \\  &b_t = b_{t-1} + \beta \mu_{y,t} \epsilon_t \\  &s_t = s_{t-m} + \gamma \mu_{y,t} \epsilon_t  \end{aligned}$
 \|
-$\begin{aligned} &y_{t} = (l_{t-1} + b_{t-1}) s_{t-m}(1 + \epsilon_t) \\ &l_t = (l_{t-1} + b_{t-1})(1 + \alpha \epsilon_t) \\ &b_t = b_{t-1} + \beta (l_{t-1} + b_{t-1}) \epsilon_t \\ &s_t = s_{t-m} (1 + \gamma \epsilon_t) \end{aligned}$\|
+$\begin{aligned} &y_{t} = (l_{t-1} + b_{t-1}) s_{t-m}(1 + \epsilon_t) \\  &l_t = (l_{t-1} + b_{t-1})(1 + \alpha \epsilon_t) \\  &b_t = b_{t-1} + \beta (l_{t-1} + b_{t-1}) \epsilon_t \\  &s_t = s_{t-m} (1 + \gamma \epsilon_t)  \end{aligned}$\|
 \|Additive damped\|
-$\begin{aligned} &y_{t} = (l_{t-1} + \phi b_{t-1})(1 + \epsilon_t) \\ &l_t = (l_{t-1} + \phi b_{t-1})(1 + \alpha \epsilon_t) \\ &b_t = \phi b_{t-1} + \beta \mu_{y,t} \epsilon_t \end{aligned}$
+$\begin{aligned} &y_{t} = (l_{t-1} + \phi b_{t-1})(1 + \epsilon_t) \\  &l_t = (l_{t-1} + \phi b_{t-1})(1 + \alpha \epsilon_t) \\  &b_t = \phi b_{t-1} + \beta \mu_{y,t} \epsilon_t  \end{aligned}$
 \|
-$\begin{aligned} &y_{t} = (l_{t-1} + \phi b_{t-1} + s_{t-m})(1 + \epsilon_t) \\ &l_t = l_{t-1} + \phi b_{t-1} + \alpha \mu_{y,t} \epsilon_t \\ &b_t = \phi b_{t-1} + \beta \mu_{y,t} \epsilon_t \\ &s_t = s_{t-m} + \gamma \mu_{y,t} \epsilon_t \end{aligned}$
+$\begin{aligned} &y_{t} = (l_{t-1} + \phi b_{t-1} + s_{t-m})(1 + \epsilon_t) \\  &l_t = l_{t-1} + \phi b_{t-1} + \alpha \mu_{y,t} \epsilon_t \\  &b_t = \phi b_{t-1} + \beta \mu_{y,t} \epsilon_t \\  &s_t = s_{t-m} + \gamma \mu_{y,t} \epsilon_t  \end{aligned}$
 \|
-$\begin{aligned} &y_{t} = (l_{t-1} + \phi b_{t-1}) s_{t-m}(1 + \epsilon_t) \\ &l_t = l_{t-1} + \phi b_{t-1} (1 + \alpha \epsilon_t) \\ &b_t = \phi b_{t-1} + \beta (l_{t-1} + \phi b_{t-1}) \epsilon_t \\ &s_t = s_{t-m}(1 + \gamma \epsilon_t) \end{aligned}$\|
+$\begin{aligned} &y_{t} = (l_{t-1} + \phi b_{t-1}) s_{t-m}(1 + \epsilon_t) \\  &l_t = l_{t-1} + \phi b_{t-1} (1 + \alpha \epsilon_t) \\  &b_t = \phi b_{t-1} + \beta (l_{t-1} + \phi b_{t-1}) \epsilon_t \\  &s_t = s_{t-m}(1 + \gamma \epsilon_t)  \end{aligned}$\|
 \|Multiplicative\|
-$\begin{aligned} &y_{t} = l_{t-1} b_{t-1} (1 + \epsilon_t) \\ &l_t = l_{t-1} b_{t-1} (1 + \alpha \epsilon_t) \\ &b_t = b_{t-1} (1 + \beta \epsilon_t) \end{aligned}$
+$\begin{aligned} &y_{t} = l_{t-1} b_{t-1} (1 + \epsilon_t) \\  &l_t = l_{t-1} b_{t-1} (1 + \alpha \epsilon_t) \\  &b_t = b_{t-1} (1 + \beta \epsilon_t)  \end{aligned}$
 \|
-$\begin{aligned} &y_{t} = (l_{t-1} b_{t-1} + s_{t-m})(1 + \epsilon_t) \\ &l_t = l_{t-1} b_{t-1} + \alpha \mu_{y,t} \epsilon_t \\ &b_t = b_{t-1} + \beta \frac{\mu_{y,t}}{l_{t-1}} \epsilon_t \\ &s_t = s_{t-m} + \gamma \mu_{y,t} \epsilon_t \end{aligned}$\|
-$\begin{aligned} &y_{t} = l_{t-1} b_{t-1} s_{t-m} (1 + \epsilon_t) \\ &l_t = l_{t-1} b_{t-1} (1 + \alpha \epsilon_t) \\ &b_t = b_{t-1} (1 + \beta \epsilon_t) \\ &s_t = s_{t-m} (1 + \gamma \epsilon_t) \end{aligned}$\|
+$\begin{aligned} &y_{t} = (l_{t-1} b_{t-1} + s_{t-m})(1 + \epsilon_t) \\  &l_t = l_{t-1} b_{t-1} + \alpha \mu_{y,t} \epsilon_t \\  &b_t = b_{t-1} + \beta \frac{\mu_{y,t}}{l_{t-1}} \epsilon_t \\  &s_t = s_{t-m} + \gamma \mu_{y,t} \epsilon_t  \end{aligned}$\|
+$\begin{aligned} &y_{t} = l_{t-1} b_{t-1} s_{t-m} (1 + \epsilon_t) \\  &l_t = l_{t-1} b_{t-1} (1 + \alpha \epsilon_t) \\  &b_t = b_{t-1} (1 + \beta \epsilon_t) \\  &s_t = s_{t-m} (1 + \gamma \epsilon_t)  \end{aligned}$\|
 \|Multiplicative damped\|
-$\begin{aligned} &y_{t} = l_{t-1} b_{t-1}^\phi (1 + \epsilon_t) \\ &l_t = l_{t-1} b_{t-1}^\phi (1 + \alpha \epsilon_t) \\ &b_t = b_{t-1}^\phi (1 + \beta \epsilon_t) \end{aligned}$\|
-$\begin{aligned} &y_{t} = (l_{t-1} b_{t-1}^\phi + s_{t-m})(1 + \epsilon_t) \\ &l_t = l_{t-1} b_{t-1}^\phi + \alpha \mu_{y,t} \epsilon_t \\ &b_t = b_{t-1}^\phi + \beta \frac{\mu_{y,t}}{l_{t-1}} \epsilon_t \\ &s_t = s_{t-m} + \gamma \mu_{y,t} \epsilon_t \end{aligned}$
+$\begin{aligned} &y_{t} = l_{t-1} b_{t-1}^\phi (1 + \epsilon_t) \\  &l_t = l_{t-1} b_{t-1}^\phi (1 + \alpha \epsilon_t) \\  &b_t = b_{t-1}^\phi (1 + \beta \epsilon_t)  \end{aligned}$\|
+$\begin{aligned} &y_{t} = (l_{t-1} b_{t-1}^\phi + s_{t-m})(1 + \epsilon_t) \\  &l_t = l_{t-1} b_{t-1}^\phi + \alpha \mu_{y,t} \epsilon_t \\  &b_t = b_{t-1}^\phi + \beta \frac{\mu_{y,t}}{l_{t-1}} \epsilon_t \\  &s_t = s_{t-m} + \gamma \mu_{y,t} \epsilon_t  \end{aligned}$
 \|
-$\begin{aligned} &y_{t} = l_{t-1} b_{t-1}^\phi s_{t-m} (1 + \epsilon_t) \\ &l_t = l_{t-1} b_{t-1}^\phi \left(1 + \alpha \epsilon_t\right) \\ &b_t = b_{t-1}^\phi \left(1 + \beta \epsilon_t\right) \\ &s_t = s_{t-m} \left(1 + \gamma \epsilon_t\right) \end{aligned}$\|
+$\begin{aligned} &y_{t} = l_{t-1} b_{t-1}^\phi s_{t-m} (1 + \epsilon_t) \\  &l_t = l_{t-1} b_{t-1}^\phi \left(1 + \alpha \epsilon_t\right) \\  &b_t = b_{t-1}^\phi \left(1 + \beta \epsilon_t\right) \\  &s_t = s_{t-m} \left(1 + \gamma \epsilon_t\right)  \end{aligned}$\|
 
 From a statistical point of view, formulae in Tables 1 and 2 correspond
 to the “true models”, they explain the models underlying potential data,
@@ -331,12 +331,10 @@ variations.
 
 ## Loading libraries and data <a class="anchor" id="loading"></a>
 
-<Tip>
-
-Statsforecast will be needed. To install, see
-[instructions](../getting-started/installation.html).
-
-</Tip>
+> **Tip**
+>
+> Statsforecast will be needed. To install, see
+> [instructions](../getting-started/installation.html).
 
 Next, we import plotting libraries and configure the plotting style.
 
@@ -443,7 +441,7 @@ from statsforecast import StatsForecast
 StatsForecast.plot(df)
 ```
 
-![](/docs/models/Holt_files/figure-markdown_strict/cell-7-output-1.png)
+![](/statsforecast/docs/models/Holt_files/figure-markdown_strict/cell-7-output-1.png)
 
 ### The Augmented Dickey-Fuller Test
 
@@ -621,7 +619,7 @@ axs[1].set_title('Partial Autocorrelation')
 plt.show();
 ```
 
-![](/docs/models/Holt_files/figure-markdown_strict/cell-10-output-1.png)
+![](/statsforecast/docs/models/Holt_files/figure-markdown_strict/cell-10-output-1.png)
 
 ### Decomposition of the time series
 
@@ -684,7 +682,7 @@ a = seasonal_decompose(df["y"], model = "additive", period=12)
 a.plot();
 ```
 
-![](/docs/models/Holt_files/figure-markdown_strict/cell-11-output-1.png)
+![](/statsforecast/docs/models/Holt_files/figure-markdown_strict/cell-11-output-1.png)
 
 ### Multiplicative
 
@@ -694,7 +692,7 @@ a = seasonal_decompose(df["y"], model = "Multiplicative", period=12)
 a.plot();
 ```
 
-![](/docs/models/Holt_files/figure-markdown_strict/cell-12-output-1.png)
+![](/statsforecast/docs/models/Holt_files/figure-markdown_strict/cell-12-output-1.png)
 
 ## Split the data into training and testing<a class="anchor" id="splitting"></a>
 
@@ -727,7 +725,7 @@ plt.title("Ads watched (hourly data)");
 plt.show()
 ```
 
-![](/docs/models/Holt_files/figure-markdown_strict/cell-15-output-1.png)
+![](/statsforecast/docs/models/Holt_files/figure-markdown_strict/cell-15-output-1.png)
 
 ## Implementation of Holt Method with StatsForecast <a class="anchor" id="implementation"></a>
 
@@ -870,7 +868,7 @@ axs[1,1].set_title("Autocorrelation");
 plt.show();
 ```
 
-![](/docs/models/Holt_files/figure-markdown_strict/cell-22-output-1.png)
+![](/statsforecast/docs/models/Holt_files/figure-markdown_strict/cell-22-output-1.png)
 
 ### Forecast Method
 
@@ -933,7 +931,7 @@ values.head()
 StatsForecast.plot(values)
 ```
 
-![](/docs/models/Holt_files/figure-markdown_strict/cell-25-output-1.png)
+![](/statsforecast/docs/models/Holt_files/figure-markdown_strict/cell-25-output-1.png)
 
 Adding 95% confidence interval with the forecast method
 
@@ -996,7 +994,7 @@ ax.legend(prop={'size': 15})
 ax.grid(True)
 ```
 
-![](/docs/models/Holt_files/figure-markdown_strict/cell-29-output-1.png)
+![](/statsforecast/docs/models/Holt_files/figure-markdown_strict/cell-29-output-1.png)
 
 ### Predict method with confidence interval
 
@@ -1122,7 +1120,7 @@ def plot_forecasts(y_hist, y_pred, models):
 plot_forecasts(df, forecast_df, models=["Add"])
 ```
 
-![](/docs/models/Holt_files/figure-markdown_strict/cell-35-output-1.png)
+![](/statsforecast/docs/models/Holt_files/figure-markdown_strict/cell-35-output-1.png)
 
 Let’s plot the same graph using the plot function that comes in
 `Statsforecast`, as shown below.
@@ -1131,7 +1129,7 @@ Let’s plot the same graph using the plot function that comes in
 sf.plot(df, forecast_df)
 ```
 
-![](/docs/models/Holt_files/figure-markdown_strict/cell-36-output-1.png)
+![](/statsforecast/docs/models/Holt_files/figure-markdown_strict/cell-36-output-1.png)
 
 ## Cross-validation <a class="anchor" id="cross_validate"></a>
 
@@ -1149,7 +1147,7 @@ contiguous as is required by our models.
 
 The following graph depicts such a Cross Validation Strategy:
 
-![](https://raw.githubusercontent.com/Nixtla/statsforecast/main/nbs/imgs/chainedwindows.gif)
+![](https://raw.githubusercontent.com/Nixtla/statsforecast/main/nbs/imgs/ChainedWindows.gif)
 
 ### Perform time series cross-validation
 

@@ -2,8 +2,8 @@
 description: Step-by-step guide on using the `CrostonOptimized Model` with `Statsforecast`.
 output-file: crostonoptimized.html
 title: CrostonOptimized Model
-
 ---
+
 
 ## Table of Contents
 
@@ -152,12 +152,10 @@ Here are some of the properties of the optimized Croston model:
 
 ## Loading libraries and data <a class="anchor" id="loading"></a>
 
-<Tip>
-
-Statsforecast will be needed. To install, see
-[instructions](../getting-started/installation.html).
-
-</Tip>
+> **Tip**
+>
+> Statsforecast will be needed. To install, see
+> [instructions](../getting-started/installation.html).
 
 Next, we import plotting libraries and configure the plotting style.
 
@@ -264,7 +262,7 @@ from statsforecast import StatsForecast
 StatsForecast.plot(df)
 ```
 
-![](/docs/models/CrostonOptimized_files/figure-markdown_strict/cell-7-output-1.png)
+![](/statsforecast/docs/models/CrostonOptimized_files/figure-markdown_strict/cell-7-output-1.png)
 
 ### Autocorrelation plots
 
@@ -314,7 +312,7 @@ axs[1].set_title('Partial Autocorrelation')
 plt.show();
 ```
 
-![](/docs/models/CrostonOptimized_files/figure-markdown_strict/cell-8-output-1.png)
+![](/statsforecast/docs/models/CrostonOptimized_files/figure-markdown_strict/cell-8-output-1.png)
 
 ### Decomposition of the time series
 
@@ -409,7 +407,7 @@ plotSeasonalDecompose(
     title="Seasonal Decomposition")
 ```
 
-![](/docs/models/CrostonOptimized_files/figure-markdown_strict/cell-11-output-2.png)
+![](/statsforecast/docs/models/CrostonOptimized_files/figure-markdown_strict/cell-11-output-2.png)
 
 ## Split the data into training and testing<a class="anchor" id="splitting"></a>
 
@@ -445,7 +443,7 @@ plt.xlabel("Hours")
 plt.show()
 ```
 
-![](/docs/models/CrostonOptimized_files/figure-markdown_strict/cell-14-output-1.png)
+![](/statsforecast/docs/models/CrostonOptimized_files/figure-markdown_strict/cell-14-output-1.png)
 
 ## Implementation of CrostonOptimized with StatsForecast <a class="anchor" id="implementation"></a>
 
@@ -608,7 +606,7 @@ ax.legend(prop={'size': 15})
 ax.grid(True)
 ```
 
-![](/docs/models/CrostonOptimized_files/figure-markdown_strict/cell-23-output-1.png)
+![](/statsforecast/docs/models/CrostonOptimized_files/figure-markdown_strict/cell-23-output-1.png)
 
 ### Predict method with confidence interval
 
@@ -691,7 +689,7 @@ plt.legend()
 plt.show();
 ```
 
-![](/docs/models/CrostonOptimized_files/figure-markdown_strict/cell-27-output-1.png)
+![](/statsforecast/docs/models/CrostonOptimized_files/figure-markdown_strict/cell-27-output-1.png)
 
 Let’s plot the same graph using the plot function that comes in
 `Statsforecast`, as shown below.
@@ -700,7 +698,7 @@ Let’s plot the same graph using the plot function that comes in
 sf.plot(df, forecast_df)
 ```
 
-![](/docs/models/CrostonOptimized_files/figure-markdown_strict/cell-28-output-1.png)
+![](/statsforecast/docs/models/CrostonOptimized_files/figure-markdown_strict/cell-28-output-1.png)
 
 ## Cross-validation <a class="anchor" id="cross_validate"></a>
 
@@ -718,7 +716,7 @@ contiguous as is required by our models.
 
 The following graph depicts such a Cross Validation Strategy:
 
-![](https://raw.githubusercontent.com/Nixtla/statsforecast/main/nbs/imgs/chainedwindows.gif)
+![](https://raw.githubusercontent.com/Nixtla/statsforecast/main/nbs/imgs/ChainedWindows.gif)
 
 ### Perform time series cross-validation
 
